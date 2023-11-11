@@ -1,29 +1,36 @@
-# icp_bg_site
+# Internet Computer Bulgaria - Pilot Project 🌐
 
-Welcome to your new icp_bg_site project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+Welcome to the **Internet Computer Bulgaria** pilot project! This open-source dApp is a collaborative platform where members of the Internet Computer Bulgaria community can actively contribute, share ideas, and participate in decision-making through a **DAO governance model**. 🚀
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+Our primary goal is to harness the collective intelligence of our community to **ideate, vote**, and bring to life innovative projects on the **Internet Computer Protocol (ICP)**. This project is also a testbed for the **ICP Internet Identity authentication feature**, showcasing the potential and efficiency of decentralized digital identity solutions. 🛠️
 
-To learn more before you start working with icp_bg_site, see the following documentation available online:
+We encourage every member, whether a seasoned developer or a curious enthusiast, to contribute their ideas, provide feedback, and help in developing this dApp. Your input is valuable in making this project a success! 🤝
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+**Key Features**:
+1. **Idea Sharing Platform**: Post your ideas and let the community discuss and refine them.
+2. **Voting Mechanism**: Use a transparent and fair voting system to select the most popular ideas.
+3. **ICP Authentication**: Test and improve the ICP Internet Identity feature within our application.
+4. **Open Source Collaboration**: Everything is open-source, allowing for wide community involvement and contribution. 
 
-If you want to start working on your project right away, you might want to try the following commands:
+Let's build something great together! ✨
 
-```bash
-cd icp_bg_site/
-dfx help
-dfx canister --help
+## Dependencies & Frameworks 🧰
+
+### Internet Computer
+
+- **Internet Identity**: We use the Internet Computer's Internet Identity service for authentication. This provides a secure, seamless, and decentralized identity verification process, ensuring user privacy and data integrity.
+
+### Front-End
+
+- **Vue 3** 
+
+- **Tailwind CSS**
+
+## Running the Project Locally 🛠️
+
+To get the project up and running on your local machine, follow these steps:
+
 ```
-
-## Running the project locally
-
-If you want to test your project locally, you can use the following commands:
-
-```bash
 # Starts the replica, running in the background
 dfx start --background
 
@@ -31,29 +38,22 @@ dfx start --background
 dfx deploy
 ```
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+After deployment, your application will be accessible at `http://localhost:4943?canisterId={asset_canister_id}`.
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+### Webpack Commands
 
-```bash
-npm run generate
-```
+This project uses Webpack for efficient bundling and compilation of resources. The following commands are integral for building and running the project:
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
+- **npm build**: This command runs Webpack to compile all the assets and code. It ensures that everything is bundled correctly for deployment or testing.
 
-If you are making frontend changes, you can start a development server with
+  ```
+  npm build
+  ```
 
-```bash
-npm start
-```
+- **npm start**: This command starts the Webpack development server in development mode. It’s useful for real-time coding and previewing changes without needing to rebuild the entire project.
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+  ```
+  npm start # Equivalent to: webpack serve --mode development --env development
+  ```
 
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+These commands are essential for development, allowing you to quickly build and test changes to the application.
