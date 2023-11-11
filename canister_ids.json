@@ -1,0 +1,8 @@
+{
+  "backend_canister": {
+    "ic": "rshoe-yqaaa-aaaap-qbzma-cai"
+  },
+  "frontend_canister": {
+    "ic": "rvgiq-viaaa-aaaap-qbzmq-cai"
+  }
+}
