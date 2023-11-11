@@ -6,16 +6,21 @@
     },
     "frontend_canister": {
       "dependencies": [
-        "backend_canister"
+        "backend_canister",
+        "internet-identity"
       ],
       "frontend": {
         "entrypoint": "src/frontend_canister/src/index.html"
       },
       "source": [
-        "src/~/assets",
+        "src/frontend_canister/assets",
         "dist/frontend_canister/"
       ],
       "type": "assets"
+    },
+    "internet-identity": {
+      "type": "pull",
+      "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
     }
   },
   "defaults": {

@@ -34,6 +34,15 @@ To get the project up and running on your local machine, follow these steps:
 # Starts the replica, running in the background
 dfx start --background
 
+# Pull dependecies
+dfx deps pull
+
+# Internet Identity initialization
+dfx deps init --argument '(null)' internet-identity
+
+# Deploys dependencies to the replica
+dfx deps deploy
+
 # Deploys your canisters to the replica and generates your candid interface
 dfx deploy
 ```
