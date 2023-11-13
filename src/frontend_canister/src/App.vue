@@ -2,7 +2,10 @@
   <div v-if="isReady">
     <div v-if="isAuthenticated">
       {{ authStore.principalId }}<br>
-      <Logout />
+      <Logout /><br>
+      <Suspense>
+        <IcpLedgers />
+      </Suspense>
     </div>
     <div v-else>
       <Login />
@@ -16,6 +19,7 @@
   import { useAuthStore } from "./store/auth";
   import Login from "./components/Login.vue";
   import Logout from "./components/Logout.vue";
+  import IcpLedgers from "./components/IcpLedgers.vue";
   import { ref } from "vue";
 
   const authStore = useAuthStore();

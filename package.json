@@ -20,7 +20,9 @@
     "@dfinity/agent": "^0.19.3",
     "@dfinity/auth-client": "^0.19.3",
     "@dfinity/candid": "^0.19.3",
+    "@dfinity/ledger-icrc": "^1.0.0",
     "@dfinity/principal": "^0.19.3",
+    "@dfinity/utils": "^1.0.0",
     "pinia": "^2.1.7",
     "vue-loader": "^17.3.1",
     "vue-router": "^4.2.5"

@@ -32,10 +32,6 @@ function actorFromIdentity(identity) {
   });
 }
 
-async function fetchPrincipalId(whoamiActor) {
-  return await whoamiActor.whoami();
-}
-
 export const useAuthStore = defineStore("auth", {
   id: "auth",
   state: () => {

@@ -1,6 +1,5 @@
 <template>
   Home<br>
-  Bace bace > 
   <router-link :to="{name: 'About'}">About</router-link>
 </template>
 
@@ -17,6 +16,5 @@ function increment() {
 
 // lifecycle hooks
 onMounted(() => {
-  console.log(`The initial count is ${count.value}.`)
 })
 </script>
