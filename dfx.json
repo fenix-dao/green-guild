@@ -7,7 +7,8 @@
     "frontend_canister": {
       "dependencies": [
         "backend_canister",
-        "internet-identity"
+        "internet-identity",
+        "icrc1_ledger_canister"
       ],
       "frontend": {
         "entrypoint": "src/frontend_canister/src/index.html"
@@ -21,6 +22,11 @@
     "internet-identity": {
       "type": "pull",
       "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+    },
+    "icrc1_ledger_canister": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/c337458aafa8e8864eadfcfe38d7e5fa385b0006/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/c337458aafa8e8864eadfcfe38d7e5fa385b0006/canisters/ic-icrc1-ledger.wasm.gz"
     }
   },
   "defaults": {

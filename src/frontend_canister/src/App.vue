@@ -4,7 +4,7 @@
       {{ authStore.principalId }}<br>
       <Logout /><br>
       <Suspense>
-        <IcpLedgers />
+        <Wallet />
       </Suspense>
     </div>
     <div v-else>
@@ -19,7 +19,7 @@
   import { useAuthStore } from "./store/auth";
   import Login from "./components/Login.vue";
   import Logout from "./components/Logout.vue";
-  import IcpLedgers from "./components/IcpLedgers.vue";
+  import Wallet from "./components/Wallet.vue";
   import { ref } from "vue";
 
   const authStore = useAuthStore();

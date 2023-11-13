@@ -44,8 +44,11 @@ dfx deps init --argument '(null)' internet-identity
 dfx deps deploy
 
 # Deploys your canisters to the replica and generates your candid interface
-dfx deploy
+dfx deploy backend_canister
+dfx deploy frontend_canister
 ```
+
+Check docs/ICRC1_LEDGER_CANISTER.md to deploy icrc1_ledger_canister
 
 After deployment, your application will be accessible at `http://localhost:4943?canisterId={asset_canister_id}`.
 
