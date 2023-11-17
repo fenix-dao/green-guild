@@ -1,25 +1,28 @@
 <template lang="">
-  <div v-if="isReady">
-    <div v-if="isAuthenticated">
-      {{ authStore.principalId }}<br>
-      <Logout /><br>
-      <Suspense>
-        <Wallet />
-      </Suspense>
-    </div>
-    <div v-else>
-      <Login />
-    </div>
+  <div v-if="isReady" class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+    <Header />
+
+    <section class="relative">
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="pt-24 pb-12 md:pt-32 md:pb-20">
+          <router-view/>
+          <!-- <div v-if="isAuthenticated">
+            {{ authStore.principalId }}<br>
+            <Suspense>
+              <Wallet />
+            </Suspense>
+          </div> -->
+        </div>
+      </div>
+    </section>
   </div>
-  <router-view/>
 </template>
 
 <script setup>
   import { storeToRefs } from "pinia";
   import { useAuthStore } from "./store/auth";
-  import Login from "./components/Login.vue";
-  import Logout from "./components/Logout.vue";
   import Wallet from "./components/Wallet.vue";
+  import Header from "./components/ui/Header.vue";
   import { ref } from "vue";
 
   const authStore = useAuthStore();
@@ -28,11 +31,5 @@
 
   if (isReady.value === false) {
     authStore.init();
-  }
-
-  function whoamiCall() {
-    authStore.whoamiActor?.whoami().then((res) => {
-      response.value = res;
-    });
   }
 </script>

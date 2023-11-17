@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import About from '../views/About.vue';
+import Wallet from '../views/Wallet.vue';
+import NotFound from '../views/NotFound.vue';
+import { useAuthStore } from '../store/auth';
 
 const routes = [
   {
@@ -9,9 +11,32 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
+    path: '/account',
+    beforeEnter: async (to, from, next) => {
+      const authStore = useAuthStore();
+
+      if (!authStore.isReady) {
+        await authStore.init();
+      }
+
+      if (!authStore.isAuthenticated) {
+        next('/');
+      } else {
+        next();
+      }
+    },
+    children: [
+      {
+        path: '/account/wallet',
+        name: 'Wallet',
+        component: Wallet,
+      }
+    ]
+  },
+  {
+    path: '/:pathMatch(.*)*', // Catch-all route
+    name: 'NotFound',
+    component: NotFound,
   },
 ];
 

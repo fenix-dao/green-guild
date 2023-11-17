@@ -1,0 +1,3 @@
+<template>
+  ICP ∞ Bulgaria
+</template>
