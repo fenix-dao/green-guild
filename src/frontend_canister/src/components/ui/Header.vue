@@ -1,5 +1,5 @@
 <template>
-  <header :class="`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`">
+  <header :class="`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : 'bg-white backdrop-blur-sm shadow-lg'}`">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
       <div class="flex items-center justify-between h-16 md:h-20">
 
@@ -11,13 +11,8 @@
         </div>
 
         <div class="px-10">
-          <ul class="flex grow justify-end flex-wrap items-center space-x-12">
-            <li>
-              DAO
-            </li>
-            <li>
-              Бибилотека
-            </li>
+          <ul class="main-nav hidden md:flex grow justify-end flex-wrap items-center space-x-12 text-xl">
+            <MenuItems />
           </ul>
         </div>
 
@@ -50,6 +45,7 @@
   import Logo from './Logo.vue';
   import MobileMenu from './MobileMenu.vue';
   import UserMenu from './UserMenu.vue';
+  import MenuItems from './MenuItems.vue';
   import LoginButton from './buttons/LoginButton.vue';
   import { useAuthStore } from "../../store/auth";
 

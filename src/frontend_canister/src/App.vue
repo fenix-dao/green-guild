@@ -4,7 +4,7 @@
 
     <section class="relative">
       <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="pt-24 pb-12 md:pt-32 md:pb-20">
+        <div class="pt-28 pb-12 md:pt-32 md:pb-20">
           <router-view/>
           <!-- <div v-if="isAuthenticated">
             {{ authStore.principalId }}<br>

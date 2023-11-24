@@ -29,10 +29,11 @@
       leave-to="opacity-0 translate-y-full"
     >
       <div ref="mobileNav" class="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white">
-        <ul class="px-5 py-2">
-          <li>
+        <ul class="px-5 py-2 space-y-4 text-xl">
+          <li v-if="!authStore.isAuthenticated">
             <LoginButton />
           </li>
+          <MenuItems />
         </ul>
       </div>
     </TransitionRoot>
@@ -42,7 +43,11 @@
 <script setup>
   import { ref, onMounted, onUnmounted } from 'vue';
   import { TransitionRoot } from '@headlessui/vue';
-  import LoginButton from './buttons/LoginButton.vue'
+  import LoginButton from './buttons/LoginButton.vue';
+  import MenuItems from "./MenuItems.vue";
+  import { useAuthStore } from "../../store/auth";
+
+  const authStore = useAuthStore();
 
   const mobileNavOpen = ref(false);
   const trigger = ref(null);

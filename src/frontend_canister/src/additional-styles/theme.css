@@ -11,6 +11,11 @@ html {
   @apply ring-0;
 }
 
+/* Main navigation styles */
+.main-nav > li:hover {
+  @apply text-blue-600;
+}
+
 /* Hamburger button */
 .hamburger svg>*:nth-child(1),
 .hamburger svg>*:nth-child(2),

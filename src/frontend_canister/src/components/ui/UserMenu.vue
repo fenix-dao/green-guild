@@ -1,6 +1,6 @@
 <template>
-  <div class="top-16 w-56 text-right">
-    <Menu as="div" class="relative inline-block text-left">
+  <div>
+    <Menu as="div" class="relative inline-block text-left top-1">
       <div>
         <MenuButton class="">
           <UserCircleIcon
