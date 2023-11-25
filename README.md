@@ -1,18 +1,4 @@
-# Internet Computer Bulgaria - Pilot Project 🌐
-
-Welcome to the **Internet Computer Bulgaria** pilot project! This open-source dApp is a collaborative platform where members of the Internet Computer Bulgaria community can actively contribute, share ideas, and participate in decision-making through a **DAO governance model**. 🚀
-
-Our primary goal is to harness the collective intelligence of our community to **ideate, vote**, and bring to life innovative projects on the **Internet Computer Protocol (ICP)**. This project is also a testbed for the **ICP Internet Identity authentication feature**, showcasing the potential and efficiency of decentralized digital identity solutions. 🛠️
-
-We encourage every member, whether a seasoned developer or a curious enthusiast, to contribute their ideas, provide feedback, and help in developing this dApp. Your input is valuable in making this project a success! 🤝
-
-**Key Features**:
-1. **Idea Sharing Platform**: Post your ideas and let the community discuss and refine them.
-2. **Voting Mechanism**: Use a transparent and fair voting system to select the most popular ideas.
-3. **ICP Authentication**: Test and improve the ICP Internet Identity feature within our application.
-4. **Open Source Collaboration**: Everything is open-source, allowing for wide community involvement and contribution. 
-
-Let's build something great together! ✨
+# Green Guild
 
 ## Dependencies & Frameworks 🧰
 
@@ -43,9 +29,18 @@ dfx deps init --argument '(null)' internet-identity
 # Deploys dependencies to the replica
 dfx deps deploy
 
+# Install npm dependencies
+npm install
+
+# Build FE assets
+npm build
+
 # Deploys your canisters to the replica and generates your candid interface
 dfx deploy backend_canister
 dfx deploy frontend_canister
+
+# Start webpack server
+npm start
 ```
 
 Check docs/ICRC1_LEDGER_CANISTER.md to deploy icrc1_ledger_canister

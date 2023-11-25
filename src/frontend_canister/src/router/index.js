@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import DAO from '../views/DAO.vue';
-import Library from '../views/Library.vue';
+import Proposals from '../views/Proposals.vue';
+import Treasury from '../views/Treasury.vue';
+import Roles from '../views/Roles.vue';
+import Whitepaper from '../views/Whitepaper.vue';
+import Gallery from '../views/Gallery.vue';
 import Wallet from '../views/Wallet.vue';
 import NotFound from '../views/NotFound.vue';
 import { useAuthStore } from '../store/auth';
@@ -13,14 +16,29 @@ const routes = [
     component: Home,
   },
   {
-    path: '/dao',
-    name: 'DAO',
-    component: DAO,
+    path: '/whitepaper',
+    name: 'Whitepaper',
+    component: Whitepaper,
   },
   {
-    path: '/library',
-    name: 'Library',
-    component: Library,
+    path: '/proposals',
+    name: 'Proposals',
+    component: Proposals,
+  },
+  {
+    path: '/treasury',
+    name: 'Treasury',
+    component: Treasury,
+  },
+  {
+    path: '/roles',
+    name: 'Roles',
+    component: Roles,
+  },
+  {
+    path: '/gallery',
+    name: 'Gallery',
+    component: Gallery,
   },
   {
     path: '/account',
@@ -54,7 +72,11 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 };
+  },
 })
 
 export default router;
