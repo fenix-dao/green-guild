@@ -11,6 +11,9 @@ log() {
 dfx identity use minter
 export MINTER_ACCOUNT_ID=$(dfx ledger account-id)
 
+log "Setting initial balance wallet"
+export INITIAL_BALANCE_WALLET="6692131f8854017caaac89749adbf14756d4742324c418b23ddaa920337b2a6a"
+
 log "Switching back to default identity"
 dfx identity use default
 export DEFAULT_ACCOUNT_ID=$(dfx ledger account-id)
@@ -22,7 +25,7 @@ dfx deploy --mode reinstall --specified-id ryjl3-tyaaa-aaaaa-aaaba-cai icp_ledge
       minting_account = \"$MINTER_ACCOUNT_ID\";
       initial_values = vec {
         record {
-          \"$DEFAULT_ACCOUNT_ID\";
+          \"$INITIAL_BALANCE_WALLET\";
           record {
             e8s = 10_000_000_000 : nat64;
           };
