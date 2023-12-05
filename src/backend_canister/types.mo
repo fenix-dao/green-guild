@@ -1,14 +1,10 @@
 import Result "mo:base/Result";
 import HashMap "mo:base/HashMap";
 import Principal "mo:base/Principal";
+import TrieMap "mo:base/TrieMap";
 module {
-    public type DAOInfo = {
-        name : Text;
-        manifesto : Text;
-        member : [Text];
-        logo : Text;
-        numberOfMembers : Nat;
-    };
+    public type HashMap<K, V> = HashMap.HashMap<K, V>;
+    public type TrieMap<K, V> = TrieMap.TrieMap<K, V>;
 
     public type MemberRole = {
         #AssetOwner;
@@ -21,16 +17,11 @@ module {
         name : Text;
         roles : [MemberRole];
     };
+    public type Members = HashMap<Principal, Member>;
+    
     public type Result<A, B> = Result.Result<A, B>;
-    public type HashMap<A, B> = HashMap.HashMap<A, B>;
 
-    public type Subaccount = Blob;
-    public type Account = {
-        owner : Principal;
-        subaccount : ?Subaccount;
-    };
-
-    public type Status = {
+    public type ProposalStatus = {
         #Open;
         #Accepted;
         #Rejected;
@@ -49,12 +40,14 @@ module {
         createdBy : Principal;
         proposalType : ProposalType;
         description : Text;
-        status : Status;
+        status : ProposalStatus;
         instruction : ?Text;
         votes : Int;
         voters : [Principal];
         // TODO: endsAt 
     };
+
+    public type Proposals = TrieMap<Nat, Proposal>;
 
     public type CreateProposalOk = Nat;
 

@@ -7,8 +7,8 @@ dfx identity new minter
 dfx identity use minter
 export MINTER=$(dfx identity get-principal)
 
-export TOKEN_NAME="Internet Computer Bulgaria"
-export TOKEN_SYMBOL="ICBG"
+export TOKEN_NAME="Chain-key Bitcoin"
+export TOKEN_SYMBOL="ckBTC"
 
 dfx identity use default
 export DEFAULT=$(dfx identity get-principal)"

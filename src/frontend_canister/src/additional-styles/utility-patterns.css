@@ -43,6 +43,10 @@
   @apply text-base px-4 py-2 shadow;
 }
 
+.btn-gray {
+  @apply bg-gray-100;
+}
+
 /* Forms */
 .form-input,
 .form-textarea,

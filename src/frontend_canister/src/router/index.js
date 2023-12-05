@@ -8,6 +8,7 @@ import Gallery from '../views/Gallery.vue';
 import Wallet from '../views/Wallet.vue';
 import NotFound from '../views/NotFound.vue';
 import { useAuthStore } from '../store/auth';
+import { useLoadingStore } from '../store/loadingStore';
 
 const routes = [
   {
@@ -44,11 +45,15 @@ const routes = [
     path: '/account',
     beforeEnter: async (to, from, next) => {
       const authStore = useAuthStore();
+      const loadingStore = useLoadingStore();
+
+      loadingStore.showLoading();
 
       if (!authStore.isReady) {
         await authStore.init();
       }
 
+      loadingStore.hideLoading();
       if (!authStore.isAuthenticated) {
         next('/');
       } else {

@@ -19,3 +19,25 @@ export function convertTokenValueToNumber(bigIntValue) {
   const divisor = 10 ** 8;
   return Number(bigIntValue) / divisor;
 }
+export function copyToClipboard(dataValue) {
+  const fallbackValue = window.location.href;
+  const valueToCopy = dataValue || fallbackValue;
+
+  // Create a new textarea element and give it the value to copy
+  const textarea = document.createElement('textarea');
+  textarea.value = valueToCopy;
+  document.body.appendChild(textarea);
+
+  // Select the textarea's contents
+  textarea.select();
+
+  try {
+    // Copy the contents
+    document.execCommand('copy');
+  } catch (err) {
+    console.error('Unable to copy', err);
+  }
+
+  // Clean up: remove the textarea
+  document.body.removeChild(textarea);
+}

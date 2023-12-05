@@ -1,11 +1,11 @@
 # Whitepaper 📝
 
 
-"Green Guide" is dedicated to fostering a love for nature 🌿 through community-driven governance. Our mission is to build a harmonious and sustainable environment for **nature camping** 🏕️, where everyone can feel connected.
+"Green Guild" is dedicated to fostering a love for nature 🌿 through community-driven governance. Our mission is to build a harmonious and sustainable environment for **nature camping** 🏕️, where everyone can feel connected.
 ## Vision and Goals
 Our vision involves creating a vibrant community 👥 centered around a nature camping site equipped with essentials like water 💧, electricity ⚡, tents 🎪, and caravans 🚐. We plan to involve our community in every aspect, from developing the site to hosting enjoyable activities. Our goal is to not only offer a unique camping experience but also to welcome and incorporate visitors' ideas 💡, demonstrating the power of a **community-led approach** in establishing **self-sustaining** camping environments.
 ### Membership
-Joining "Green Guide" is straightforward and flexible, with two paths to membership:
+Joining "Green Guild" is straightforward and flexible, with two paths to membership:
 
 
 1. **Contributor Membership**: Simply lock in 1 ICP to instantly become a "Contributor" member. This role not only grants you voting rights but also the potential to take on multiple roles, broadening your involvement and impact within the DAO.

@@ -7,7 +7,9 @@
     "frontend_canister": {
       "dependencies": [
         "backend_canister",
-        "internet-identity"
+        "internet-identity",
+        "icp_ledger_canister",
+        "icrc1_ledger_canister"
       ],
       "frontend": {
         "entrypoint": "src/frontend_canister/src/index.html"
@@ -22,10 +24,20 @@
       "type": "pull",
       "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
     },
+    "icp_ledger_canister": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/d73659a2baf78302b88e29e5c2bc891cde1e3e0b/rs/rosetta-api/icp_ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/d73659a2baf78302b88e29e5c2bc891cde1e3e0b/canisters/ledger-canister.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+        }
+      }
+    },
     "icrc1_ledger_canister": {
       "type": "custom",
-      "candid": "https://raw.githubusercontent.com/dfinity/ic/c337458aafa8e8864eadfcfe38d7e5fa385b0006/rs/rosetta-api/icrc1/ledger/ledger.did",
-      "wasm": "https://download.dfinity.systems/ic/c337458aafa8e8864eadfcfe38d7e5fa385b0006/canisters/ic-icrc1-ledger.wasm.gz"
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/087190165198a9dc7b3c9cf80e0812c0c03964c6/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/087190165198a9dc7b3c9cf80e0812c0c03964c6/canisters/ic-icrc1-ledger.wasm.gz"
     }
   },
   "defaults": {

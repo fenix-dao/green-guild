@@ -34,7 +34,7 @@
                   class="h-5 w-5 mr-2"
                   aria-hidden="true"
                 />
-                Портфейл
+                Wallet
               </router-link>
             </MenuItem>
           </div>
@@ -54,7 +54,7 @@
                   class="h-5 w-5 mr-2 drop-shadow-lg"
                   aria-hidden="true"
                 />
-                Изход
+                Logout
               </button>
             </MenuItem>
           </div>

@@ -2,7 +2,7 @@
   <div class=" text-center">
     <!-- <img src="inifnity-illustration.png" class="h-auto md:max-w-[366px] max-w-[66%] mx-auto" /> -->
     <h1 class="h1 font-semibold">
-      Nature Awaits: Join the Green Guide Community!
+      Nature Awaits: Join the Green Guild Community!
     </h1>
     <p>Discover, Connect, Conserve – Together in the Great Outdoors</p>
     <div class="max-w-[760px] text-lg text-left mx-auto mt-12 md:space-y-10 space-y-16">
@@ -10,7 +10,7 @@
       <!-- Section 1 -->
       <div class="pt-12 pb-12">
         <div class="w-full max-w-[610px] text-center mx-auto">
-            <h2 class="h1">What is Green Guide?</h2>
+            <h2 class="h1">What is Green Guild?</h2>
             <p class="p">
               Our initiative focuses on transforming camping into a sustainable, community-driven experience, where nature lovers unite to create and enjoy eco-friendly adventures. It's a place for collaboration, innovation, and building lasting connections with the environment. Join this movement to redefine outdoor exploration and cherish the natural world.
             </p>
@@ -35,9 +35,9 @@
           </div>
           <div class="w-full md:w-1/2">
               <!-- Header + Paragraph here -->
-              <h2 class="h2">Why Choose Green Guide?</h2>
+              <h2 class="h2">Why Choose Green Guild?</h2>
               <p class="p">
-                Experience Camping Like Never Before: With Green Guide, you're not just visiting a camping site – you're actively participating in its creation and evolution. It's a place where your ideas matter, your contributions shape the environment, and together, we build a sustainable camping haven.
+                Experience Camping Like Never Before: With Green Guild, you're not just visiting a camping site – you're actively participating in its creation and evolution. It's a place where your ideas matter, your contributions shape the environment, and together, we build a sustainable camping haven.
               </p>
           </div>
       </div>
