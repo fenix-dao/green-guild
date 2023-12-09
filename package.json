@@ -12,9 +12,9 @@
     "build": "webpack",
     "prebuild": "dfx generate",
     "start": "webpack serve --mode development --env development",
-    "deploy:local": "dfx deploy --network=local",
-    "deploy:ic": "dfx deploy --network=ic",
-    "generate": "dfx generate backend_canister"
+    "generate": "dfx generate backend_canister",
+    "deploy:local": "sh scripts/deploy_local.sh",
+    "deploy:ic": "dfx deploy --network=ic"
   },
   "dependencies": {
     "@dfinity/agent": "^0.19.3",
