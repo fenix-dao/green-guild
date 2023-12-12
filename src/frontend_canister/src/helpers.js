@@ -15,8 +15,8 @@ export function convertArrayToObject(array) {
   });
   return result;
 }
-export function convertTokenValueToNumber(bigIntValue) {
-  const divisor = 10 ** 8;
+export function convertTokenValueToNumber(bigIntValue, decimals) {
+  const divisor = 10 ** decimals;
   return Number(bigIntValue) / divisor;
 }
 export function copyToClipboard(dataValue) {
@@ -40,4 +40,6 @@ export function copyToClipboard(dataValue) {
 
   // Clean up: remove the textarea
   document.body.removeChild(textarea);
+
+  alert('Copied to clipboard!');
 }

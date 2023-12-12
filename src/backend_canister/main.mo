@@ -16,6 +16,7 @@ import IterType "mo:base/IterType";
 import Types "./types";
 import MemberHelper "modules/member_helper";
 import ProposalHelper "modules/proposal_helper";
+import Account "modules/account/Account";
 
 actor class DAO() = this {
   public type Result<Ok, Err> = Result.Result<Ok, Err>;
@@ -234,6 +235,10 @@ actor class DAO() = this {
         return true;
       }
     }
+  };
+
+  public shared query (msg) func getAccountId() : async Account.AccountIdentifier {
+    Account.accountIdentifier(msg.caller, Account.defaultSubaccount());
   };
 
   public shared ({ caller }) func whoami() : async Principal {

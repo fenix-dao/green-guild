@@ -15,14 +15,20 @@ log "Setting token name and symbol"
 export TOKEN_NAME="Chain-key Bitcoin"
 export TOKEN_SYMBOL="ckBTC"
 
-log "Setting initial balance wallet"
-export INITIAL_BALANCE_WALLET="c6icq-mj2yd-ss2ea-3qhtb-mob5w-2jmau-hu7bs-zw2wi-2juqh-wmgxz-wae"
+# Check if the first argument is provided
+if [ -z "$1" ]; then
+  log "No initial wallet argument provided, setting default value"
+  INITIAL_BALANCE_WALLET="z3n2g-kf2po-qhjiz-jpry2-iejt4-hjo6m-obubq-6g45x-m7x7a-axdmi-wqe"
+else
+  log "Setting initial balance wallet from argument"
+  INITIAL_BALANCE_WALLET=$1
+fi
 
 log "Switching back to default identity"
 dfx identity use default
 
 log "Setting token parameters"
-export PRE_MINTED_TOKENS=10_000_000_000
+export PRE_MINTED_TOKENS=10_001_000_000
 export TRANSFER_FEE=10_000
 
 log "Setting archive parameters"

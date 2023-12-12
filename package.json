@@ -22,7 +22,7 @@
     "@dfinity/candid": "^0.19.3",
     "@dfinity/ledger-icrc": "^1.0.0",
     "@dfinity/principal": "^0.19.3",
-    "@dfinity/utils": "^1.0.0",
+    "@dfinity/utils": "^1.1.0",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
     "@types/aos": "^3.0.7",

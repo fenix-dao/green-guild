@@ -91,7 +91,7 @@
     DialogTitle,
   } from '@headlessui/vue'
 
-  const isOpen = ref(true);
+  const isOpen = ref(false);
   const isNewcomer = ref(false);
   const isContributor = ref(false);
 

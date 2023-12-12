@@ -1,4 +1,3 @@
-import Types "../types";
 import Iter "mo:base/Iter";
 import Array "mo:base/Array";
 import Principal "mo:base/Principal";
@@ -6,6 +5,7 @@ import Int "mo:base/Int";
 import Option "mo:base/Option";
 import Result "mo:base/Result";
 import MemberHelper "member_helper";
+import Types "../types";
 
 module {
   public type Result<Ok, Err> = Result.Result<Ok, Err>;

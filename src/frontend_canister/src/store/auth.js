@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { AuthClient } from "@dfinity/auth-client";
 import { createActor, canisterId } from "../../../declarations/backend_canister";
 import { toRaw } from "vue";
+import { toHexString } from "@dfinity/candid";
 
 const defaultOptions = {
   /**
@@ -40,8 +41,8 @@ export const useAuthStore = defineStore("auth", {
       isAuthenticated: null,
       authClient: null,
       identity: null,
-      whoamiActor: null,
-      principalId: null,
+      backendActor: null,
+      accountId: null,
     };
   },
   actions: {
@@ -50,15 +51,15 @@ export const useAuthStore = defineStore("auth", {
       this.authClient = authClient;
       const isAuthenticated = await authClient.isAuthenticated();
       const identity = isAuthenticated ? authClient.getIdentity() : null;
-      const whoamiActor = identity ? actorFromIdentity(identity) : null;
+      const backendActor = identity ? actorFromIdentity(identity) : null;
 
       this.isAuthenticated = isAuthenticated;
       this.identity = identity;
-      this.whoamiActor = whoamiActor;
+      this.backendActor = backendActor;
       this.isReady = true;
 
-      if(this.isAuthenticated) {
-        await this.fetchAndUpdatePrincipalId();
+      if(this.isAuthenticated && this.accountId == null) {
+        await this.fetchAndUpdateAccountId();
       }
     },
     async login() {
@@ -70,11 +71,11 @@ export const useAuthStore = defineStore("auth", {
           this.identity = this.isAuthenticated
             ? authClient.getIdentity()
             : null;
-          this.whoamiActor = this.identity
+          this.backendActor = this.identity
             ? actorFromIdentity(this.identity)
             : null;
 
-          await this.fetchAndUpdatePrincipalId();
+          await this.fetchAndUpdateAccountId();
         },
       });
     },
@@ -83,15 +84,15 @@ export const useAuthStore = defineStore("auth", {
       await authClient?.logout();
       this.isAuthenticated = false;
       this.identity = null;
-      this.whoamiActor = null;
+      this.backendActor = null;
     },
-    async fetchAndUpdatePrincipalId() {
-      if (this.isAuthenticated && this.whoamiActor) {
+    async fetchAndUpdateAccountId() {
+      if (this.isAuthenticated && this.backendActor) {
         try {
-          const res = await this.whoamiActor.whoami();
-          this.principalId = res;
+          const res = await this.backendActor.getAccountId();
+          this.accountId = toHexString(res);
         } catch (error) {
-          console.error('Error fetching principal ID:', error);
+          console.error('Error fetching Account ID:', error);
         }
       }
     },
